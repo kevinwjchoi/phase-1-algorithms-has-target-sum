@@ -1,17 +1,30 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i = 0; i < array.length; i++){
+    const complement = target - array[i];
+    for (let j = i + 1; j < array.length; j++){
+      if (array[j] === complement) return true;
+      }   
+  }
+  return false;
 }
-
+ 
 /* 
-  Write the Big O time complexity of your function here
+  0(n)
 */
 
 /* 
-  Add your pseudocode here
+ hasTargetSum iterates array of numbers.
+ set i = 0, minus it from the target.
+ set that equal to the complement number.
+iterate over to find the complement number.
+once found, return true, else return false
 */
 
 /*
-  Add written explanation of your solution here
+  create a function that finds the sum of these numbers in the array.
+  first number will be subtracted from the target to deteremine the complement number.
+  run the loop till we find a matching number of the complement or till the end. 
+  return true if found, else return false 
 */
 
 // You can run `node index.js` to view these console logs
